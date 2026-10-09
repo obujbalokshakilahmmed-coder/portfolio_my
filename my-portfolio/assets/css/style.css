@@ -1,0 +1,872 @@
+@import url("https://googleapis.com");
+
+:root {
+  --primary-color: #0d1224;
+  --secondary-color: #020617;
+  --neon-orange: #f97316;
+  --neon-blue: #3b82f6;
+  --text-color: #ffffff;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--primary-color);
+  color: var(--text-color);
+}
+
+/* Header/Navbar Styles */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+  background: rgba(13, 18, 36, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+
+header .logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+header .logo i {
+  color: var(--neon-blue);
+  margin-right: 0.5rem;
+}
+
+header .navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+header .navbar ul li a {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-left: 3rem;
+  font-weight: 600;
+}
+
+header .navbar ul li a:hover, header .navbar ul li a.active {
+  color: var(--neon-orange);
+}
+
+#menu {
+  font-size: 3rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none;
+}
+
+
+
+
+/* Home/Hero Section */
+.home {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9%;
+  background: var(--secondary-color);
+  overflow: hidden;
+}
+
+#particles-js {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+
+.home .content {
+  z-index: 2;
+  max-width: 60rem;
+}
+
+.home .content h2 {
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home .content h2 span {
+  color: var(--neon-orange);
+}
+
+.home .content p {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.home .content p span {
+  color: var(--neon-blue);
+}
+
+.home .socials {
+  margin-top: 3rem;
+}
+
+.home .socials .social-icons {
+  display: flex;
+  list-style: none;
+}
+
+.home .socials .social-icons li a {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+
+.home .socials .social-icons li a:hover {
+  background: var(--neon-blue);
+  transform: scale(1.1);
+}
+
+.home .image {
+  z-index: 2;
+}
+
+.home .image img {
+  width: 40rem;
+  border-radius: 50%;
+  border: 0.5rem solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+
+/* Universal Button */
+.btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1.2rem 3.5rem;
+  background: var(--neon-blue);
+  color: var(--text-color);
+  border-radius: 3rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+  background: var(--neon-orange);
+  letter-spacing: 0.1rem;
+}
+
+/* About Section */
+.about {
+  padding: 10rem 9%;
+  background: var(--primary-color);
+}
+
+.heading {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 5rem;
+  font-weight: 700;
+}
+
+.heading span {
+  color: var(--neon-orange);
+}
+
+.about .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.about .row .image img {
+  width: 35rem;
+  border-radius: 2rem;
+  border: 0.3rem solid rgba(255, 255, 255, 0.1);
+}
+
+.about .row .content {
+  flex: 1 1 50rem;
+}
+
+.about .row .content h3 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.about .row .content .tag {
+  font-size: 1.6rem;
+  color: var(--neon-blue);
+  font-weight: 600;
+}
+
+.about .row .content p {
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.about .row .content .box-container {
+  margin-top: 2rem;
+}
+
+.about .row .content .box-container .box p {
+  font-size: 1.6rem;
+}
+
+.about .row .content .box-container .box p span {
+  color: var(--neon-orange);
+  font-weight: 600;
+}
+
+
+
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  #menu { display: block; }
+  header .navbar {
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--primary-color);
+    border-top: 0.1rem solid rgba(255, 255, 255, 0.1);
+    display: none;
+  }
+  header .navbar.active { display: block; }
+  header .navbar ul { flex-direction: column; padding: 2rem; }
+  header .navbar ul li a { margin: 1.5rem 0; font-size: 2rem; display: block; }
+  .home { flex-direction: column-reverse; padding-top: 15rem; text-align: center; }
+  .home .image img { width: 30rem; margin-bottom: 3rem; }
+  .home .socials .social-icons { justify-content: center; }
+}
+
+
+
+
+
+/* Work/Projects Section Styles */
+.work {
+  padding: 10rem 9%;
+  background: var(--secondary-color);
+}
+
+.work .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.work .box-container .box {
+  flex: 1 1 35rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 0.1rem solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.work .box-container .box:hover {
+  border-color: var(--neon-orange);
+  box-shadow: 0 1rem 2rem rgba(249, 115, 22, 0.1);
+  transform: translateY(-0.5rem);
+}
+
+/* 🎯 শাকিল ভাই, আপনার ৫১২x৫১২ স্কয়ার ছবি সম্পূর্ণ ফিট করার উইনিং মাস্টার লজিক */
+.work .box-container .box img {
+  width: 100% !important;
+  height: 35rem !important; /* বর্গাকার ছবির জন্য পারফেক্ট প্রফেশনাল উচ্চতা ভাই */
+  object-fit: contain !important; /* ⚡ ম্যাজিক লাইন: ছবি এক পিক্সেলও না কেটে পুরো ৫১২x৫১২ ইমেজ সম্পূর্ণ দেখাবে ভাই! */
+  background: rgba(0, 0, 0, 0.4) !important; /* ছবির পেছনে চমৎকার একটি প্রফেশনাল ডার্ক শেড ভাই */
+  padding: 0.9rem !important; /* ছবির চারপাশ থেকে লাক্সারি মার্জিন স্পেসিং ভাই */
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.work .box-container .box .content {
+  padding: 2rem;
+}
+
+.work .box-container .box .content h3 {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.work .box-container .box .content p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.work .box-container .box .content .btns {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.work .box-container .box .content .btns .btn {
+  margin-top: 0;
+  padding: 0.8rem 2rem;
+  font-size: 1.4rem;
+}
+
+
+
+
+
+/* Experience Timeline Styles */
+.experience {
+  padding: 10rem 9%;
+  background: var(--primary-color);
+}
+
+.timeline {
+  position: relative;
+  max-width: 120rem;
+  margin: 5rem auto 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  background: var(--neon-blue);
+  top: 0; bottom: 0; left: 50%;
+  margin-left: -0.1rem;
+}
+
+.timeline .container {
+  padding: 1rem 4rem;
+  position: relative;
+  background: transparent;
+  width: 50%;
+}
+
+.timeline .container::after {
+  content: '';
+  position: absolute;
+  width: 1.6rem;
+  height: 1.6rem;
+  right: -0.8rem;
+  background-color: var(--secondary-color);
+  border: 0.4rem solid var(--neon-orange);
+  top: 2.2rem;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline .left { left: 0; }
+.timeline .right { left: 50%; }
+.timeline .right::after { left: -0.8rem; }
+
+.timeline .content {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  position: relative;
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.05);
+}
+
+.timeline .content h2 { font-size: 2rem; color: var(--neon-orange); }
+.timeline .content h3 { font-size: 1.6rem; margin-top: 0.5rem; }
+.timeline .content p { font-size: 1.4rem; color: rgba(255, 255, 255, 0.6); }
+
+.viewall, .morebtn {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .timeline::after { left: 3.1rem; }
+  .timeline .container { width: 100%; padding-left: 7rem; padding-right: 2rem; }
+  .timeline .container::after { left: 2.2rem; }
+  .timeline .right { left: 0; }
+}
+
+
+
+
+
+/* Contact Section Styles */
+.contact {
+  padding: 10rem 9%;
+  background: var(--secondary-color);
+}
+
+.contact .container {
+  max-width: 105rem;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.02);
+  border: 0.1rem solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+}
+
+.contact .container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.contact .container .content .image-box img {
+  width: 40rem;
+}
+
+.contact .container .content form {
+  flex: 1 1 45rem;
+}
+
+.contact .form-group .field, .contact .form-group .message {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.contact .form-group .field input, .contact .form-group .message textarea {
+  width: 100%;
+  height: 5rem;
+  padding: 1.5rem 2rem 1.5rem 5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.1rem solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+.contact .form-group .message textarea {
+  height: 15rem;
+  resize: none;
+}
+
+.contact .form-group .field input:focus, .contact .form-group .message textarea:focus {
+  border-color: var(--neon-orange);
+  box-shadow: 0 0 1rem rgba(249, 115, 22, 0.2);
+}
+
+.contact .form-group i {
+  position: absolute;
+  left: 2rem; top: 1.7rem;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.contact .form-group .message i { top: 2rem; }
+
+.contact .button-area button {
+  padding: 1.2rem 3.5rem;
+  background: var(--neon-blue);
+  color: var(--text-color);
+  font-size: 1.8rem;
+  font-weight: 600;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.contact .button-area button:hover {
+  background: var(--neon-orange);
+}
+
+/* Footer Styles */
+.footer {
+  padding: 5rem 9% 2rem 9%;
+  background: var(--primary-color);
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.05);
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1-frame));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.footer .box-container .box p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+  text-transform: capitalize;
+}
+
+.footer .box-container .box a:hover {
+  color: var(--neon-orange);
+  padding-left: 0.5rem;
+}
+
+.footer .box-container .box .share a {
+  display: inline-block;
+  height: 4rem; width: 4rem;
+  line-height: 4rem;
+  font-size: 1.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.footer .box-container .box .share a:hover {
+  background: var(--neon-orange);
+  transform: scale(1.1);
+}
+
+.footer .credit {
+  text-align: center;
+  font-size: 1.8rem;
+  padding-top: 2.5rem;
+  border-top: 0.1rem solid rgba(255, 255, 255, 0.05);
+  font-weight: 600;
+}
+
+.footer .credit a { color: var(--neon-orange); }
+
+@media (max-width: 768px) {
+  .contact .container .content .image-box { display: none; }
+  .footer .box-container { grid-template-columns: 1fr; text-align: center; }
+  .footer .box-container .box .share { display: flex; justify-content: center; }
+}
+
+
+
+
+
+
+
+/* Scroll Top Button Styles */
+#scroll-top {
+  position: fixed;
+  bottom: 7.5rem; right: 2rem;
+  z-index: 100;
+  background: var(--neon-orange);
+  color: var(--text-color);
+  border-radius: .5rem;
+  padding: 1rem 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+#scroll-top.active {
+  display: block;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.8rem); }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   SHAKIL BHAI'S PREMIUM EDUCATION CARD GRID STYLES
+   ========================================================================== */
+.education {
+  background: var(--primary-color) !important;
+  padding: 10rem 9% !important;
+  text-align: center;
+}
+
+.education .qoute {
+  font-size: 1.6rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 5rem;
+}
+
+.education .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.education .box-container .box {
+  flex: 1 1 45rem;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 0.1rem solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.education .box-container .box:hover {
+  border-color: var(--neon-orange) !important;
+  box-shadow: 0 1rem 2.5rem rgba(249, 115, 22, 0.15) !important;
+  transform: translateY(-0.5rem);
+}
+
+.education .box-container .box .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.education .box-container .box .edu-icon {
+  font-size: 3rem;
+  color: var(--neon-blue);
+  margin-bottom: 0.5rem;
+}
+
+.education .box-container .box h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.education .box-container .box p.inst {
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.education .box-container .box h4 {
+  font-size: 1.5rem;
+  color: var(--neon-orange);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .education .box-container .box {
+    flex: 1 1 100%;
+    padding: 2.5rem;
+  }
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   SHAKIL BHAI'S SKILLS SECTION DARK NEON GRID LAYOUT
+   ========================================================================== */
+.skills {
+  background: #5b06b3 !important; /* স্ক্রিনশটের সেই প্রফেশনাল ডিপ পার্পল/বেগুনি কালার ব্যাকগ্রাউন্ড ভাই */
+  padding: 6rem 9% 8rem 9% !important;
+  text-align: center;
+}
+
+.skills .heading {
+  font-size: 3.5rem;
+  color: #ffffff !important;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.skills .heading i {
+  color: #ffffff;
+}
+
+.skills .heading span {
+  color: #facc15 !important; /* Abilities লেখাটির সেই সুন্দর হলুদ রঙের নিয়ন শেড ভাই */
+}
+
+.skills-container {
+  max-width: 114rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); /* স্ক্রিনশটের মতো নিখুঁত ৬টি কলামের গ্রিড ভাই */
+  gap: 2rem;
+  padding: 3rem;
+  background: #110329; /* ভেতরের সেই ব্যাকগ্রাউন্ড ডার্ক প্যানেল বক্স ভাই */
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
+}
+
+.skills-container .skill-box {
+  background: #09021a; /* প্রতিটা স্কিল কার্ডের সেই চমৎকার রয়্যাল ডার্ক ব্ল্যাক কালার ভাই */
+  border: 0.1rem solid #1e0b45;
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 1rem rgba(255, 255, 255, 0.02);
+}
+
+.skills-container .skill-box:hover {
+  border-color: #00df89 !important; /* মাউস নিলে স্ক্রিনশটের মতো নিয়ন গ্রিন/সবুজ বর্ডার জ্বলে উঠবে ভাই */
+  box-shadow: 0 0.5rem 2rem rgba(0, 223, 137, 0.2) !important;
+  transform: translateY(-0.5rem);
+}
+
+.skills-container .skill-box img {
+  height: 4.5rem;
+  width: 4.5rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0.2rem 0.5rem rgba(0, 0, 0, 0.3));
+}
+
+.skills-container .skill-box span {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+/* মোবাইল ও ট্যাবলেটের জন্য রেসপনসিভ মেকানিজম */
+@media (max-width: 768px) {
+  .skills {
+    padding: 5rem 4% !important;
+  }
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+  .skills-container .skill-box {
+    padding: 1.8rem 1rem;
+  }
+  .skills-container .skill-box span {
+    font-size: 1.3rem;
+  }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   SHAKIL BHAI'S UNIQUE HERO DESIGN WITH DUAL TYPOGRAPHY BALANCING
+   ========================================================================== */
+.home .content .main-title {
+  font-size: 5.2rem !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.05rem !important;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.home .content .main-title .orange-neon {
+  color: var(--neon-orange) !important;
+  text-shadow: 0 0 2rem rgba(249, 115, 22, 0.3);
+}
+
+/* সাব-টাইটেল ব্যাজ এবং কার্ড কনফিগারেশন ভাই */
+.home .content .subtitle-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.02);
+  border: 0.1rem solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 2rem;
+  border-radius: 1.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.home .content .subtitle-badge .badge-tag {
+  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: #1e1b4b;
+  color: #60a5fa;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.4rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.home .content .subtitle-badge .sub-engineering {
+  font-size: 2.8rem !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  line-height: 1.3 !important;
+}
+
+.home .content .subtitle-badge .sub-engineering .blue-neon {
+  color: #3b82f6 !important;
+  font-weight: 700;
+  text-shadow: 0 0 1.5rem rgba(59, 130, 246, 0.4);
+}
+
+/* মোবাইলের রেসপনসিভ ব্যালেন্স স্ক্রিন স্ক্রলিং */
+@media (max-width: 768px) {
+  .home .content .main-title {
+    font-size: 3.8rem !important;
+    text-align: center;
+  }
+  .home .content .subtitle-badge {
+    padding: 1.2rem 1.5rem;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    max-width: 90%;
+  }
+  .home .content .subtitle-badge .sub-engineering {
+    font-size: 2.2rem !important;
+  }
+}
+
